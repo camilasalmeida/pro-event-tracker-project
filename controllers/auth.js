@@ -25,7 +25,15 @@ const hashedPassword = bcrypt.hashSync(req.body.password, 10) ;                 
 req.body.password = hashedPassword;
 
 const user = await User.create(req.body);
-res.send(`Thanks for signing up ${user.username}!`);
+//res.send(`Thanks for signing up ${user.username}!`);
+
+req.session.user = {
+    username: user.username,
+  };
+  
+  req.session.save(() => {
+    res.redirect("/");
+  });
 });
 
 //-----------------------//
@@ -54,14 +62,18 @@ req.session.user = {                                                            
     username: userInDatabase.username,
     _id: userInDatabase._id
 };
-res.redirect('/');
-});
+
+req.session.save(() => {
+    res.redirect("/");
+  })});
 
 //---------------------\\
 router.get('/sign-out', async (req, res) => {
-    req.session.destroy();
-    res.redirect('/');
-})
+    req.session.destroy(() => {
+        res.redirect("/");
+    });
+});
+
 
 //------------------------------------------------------------------------------\\
-module.exports = router;                              // Export router.
+module.exports = router;                              // Export router

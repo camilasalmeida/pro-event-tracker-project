@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const methodOverride = require("method-override");
 const morgan = require('morgan');
 const session = require('express-session');                               // This middleware will automatically manage session data for each user request.
+const MongoStore = require("connect-mongo");
+
 
 const app = express();
 
@@ -31,6 +33,9 @@ app.use(                                                              // Creatin
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,                                     // This allows us to create an empty session object.
+        store: MongoStore.create({
+         mongoUrl: process.env.MONGODB_URI,
+        }),
     })
 );
 
