@@ -25,7 +25,6 @@ app.use(express.urlencoded({ extended: false }));                     // Middlew
 app.use(methodOverride("_method"));                                   // Middleware for using HTTP verbs such as PUT or DELETE.
 //app.use(morgan('dev'));                                             // Morgan for logging HTTP requests.
 
-
 //----------------------------------------------------------------------\\
 
 app.get('/', async (req, res) => {
