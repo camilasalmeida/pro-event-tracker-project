@@ -8,9 +8,17 @@
 
 
   <body>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Sign in</a>
-    <h1>Welcome to the Pro Event Tracker App! A user-friendly web application designed to help professionals efficiently manage and track conferences, seminars, and industry events. </h1>
-  
+    
+
+    <% if (user) { %>
+    <h1>Welcome to the Pro Event Tracker App, <%= user.username %>!    A user-friendly web application designed to help professionals efficiently manage and track conferences, seminars, and industry events. </h1>
+    <% } else { %>
+    <h1>Welcome to the Pro Event Tracker App, Guest!</h1>
+    <p> 
+        <a href="/auth/sign-up">Sign up</a> 
+        <a href="/auth/sign-in">Sign in</a>
+    </p>
+    <% } %>
+
 </body>
 </html>

@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require("method-override");
 const morgan = require('morgan');
+const session = require('express-session');                               // This middleware will automatically manage session data for each user request.
 
 const app = express();
 
@@ -25,11 +26,27 @@ app.use(express.urlencoded({ extended: false }));                     // Middlew
 app.use(methodOverride("_method"));                                   // Middleware for using HTTP verbs such as PUT or DELETE.
 //app.use(morgan('dev'));                                             // Morgan for logging HTTP requests.
 
+app.use(                                                              // Creating a session, configuring it. Session cookie 🍪
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,                                     // This allows us to create an empty session object.
+    })
+);
+
+
+
+
+
+
 //----------------------------------------------------------------------\\
 
 app.get('/', async (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', {
+        user : req.session.user,
+    });
 });
+
 
 app.use('/auth', authController);                                     // -> That code will funnel any requests starting with /auth to the `authController`.
 
