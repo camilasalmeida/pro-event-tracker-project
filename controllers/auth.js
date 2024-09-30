@@ -28,9 +28,10 @@ const user = await User.create(req.body);
 res.send(`Thanks for signing up ${user.username}!`);
 });
 
-
-
-
+//-----------------------//
+router.get('/sign-in', async (req, res) => {
+    res.render('auth/sign-in.ejs');
+});
 
 //------------------------------------------------------------------------------\\
 module.exports = router;                              // Export router.
