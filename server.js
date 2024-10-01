@@ -6,6 +6,8 @@ const methodOverride = require("method-override");
 const morgan = require('morgan');
 const session = require('express-session');                               // This middleware will automatically manage session data for each user request.
 const MongoStore = require("connect-mongo");
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
 
 
 const app = express();
@@ -39,10 +41,7 @@ app.use(                                                              // Creatin
     })
 );
 
-
-
-
-
+app.use(passUserToView);                                              // Should be included before all our routes.
 
 //----------------------------------------------------------------------\\
 
@@ -52,8 +51,10 @@ app.get('/', async (req, res) => {
     });
 });
 
-
 app.use('/auth', authController);                                     // -> That code will funnel any requests starting with /auth to the `authController`.
+app.use(isSignedIn);
+
+
 
 
 

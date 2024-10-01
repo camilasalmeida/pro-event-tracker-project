@@ -74,6 +74,5 @@ router.get('/sign-out', async (req, res) => {
     });
 });
 
-
 //------------------------------------------------------------------------------\\
 module.exports = router;                              // Export router
