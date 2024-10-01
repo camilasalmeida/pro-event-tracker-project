@@ -48,10 +48,17 @@ app.use(passUserToView);                                              // Should 
 //----------------------------------------------------------------------\\
 
 app.get('/', async (req, res) => {
-    res.render('index.ejs', {
-        user : req.session.user,
-    });
+    if (req.session.user) {                                            // Check if the user is signed in.
+        res.redirect(`/users/${req.session.user._id}/events`);         // Redirect signed-in users to their events index.
+    } else {
+    res.render('index.ejs');                                           // Show the homepage for users who are not signed in.
+    };
 });
+
+//----------------\\
+
+
+
 
 app.use('/auth', authController);                                     // -> That code will funnel any requests starting with /auth to the `authController`.
 app.use(isSignedIn);
