@@ -3,20 +3,26 @@ const router = express.Router();
 const User = require('../models/user.js');
 //---------------------------------------------------------------\\
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        res.render('events/index.ejs');
-    } catch (error) {
+        const currentUser = await User.findById(req.session.user._id);                   // Look up the user from req.session.
+        res.render('events/index.ejs', {                                                 // Render index.ejs, passing in all of the current user's events as data in the context objects.
+            events: currentUser.events,
+        });
+        } catch (error) {
         console.log(error)
         res.redirect('/')
     }
 });
 
+
+//-------------------\\
+
 router.get('/new', async (req, res) => {
     res.render('events/new.ejs');
 });
 
-//------POST-------\\
+//------POST the form-------\\
 
 router.post('/', async (req, res) => {
     try {

@@ -13,5 +13,10 @@
   <h1>Your Apps</h1>
   <a href="/users/<%=user._id%>/events/new">Add an Event</a>                  <!-- The link for this route should match our defined route above -->
 
+  <ul>
+    <% events.forEach((event) => { %>
+        <li><%= event.conferenceTitle %> promoted by <%= event.company %></li>
+    <% }) %>
+  </ul>
 </body>
 </html>
