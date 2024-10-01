@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= event.title %></title>
+</head>
+
+
+
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= event.conferenceTitle %> promoted by <%= event.company %></h1>
+    <% if (event.personalNotes) { %>
+        <p>Notes: <%= event.personalNotes %></p>
+    <% } %>
+    <% if (event.status) { %>
+        <p>Status: <%= event.status %></p>
+    <% } %>
+
+
+</body>
+</html>

@@ -9,14 +9,21 @@
 
 
 <body>
-  <%- include('../partials/_navbar.ejs') %>                                  <!-- Adding the nav partial here -->
+  <%- include('../partials/_navbar.ejs') %>                                        <!-- Adding the nav partial here -->
   <h1>Your Apps</h1>
-  <a href="/users/<%=user._id%>/events/new">Add an Event</a>                  <!-- The link for this route should match our defined route above -->
+  <a href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
 
   <ul>
     <% events.forEach((event) => { %>
-        <li><%= event.conferenceTitle %> promoted by <%= event.company %></li>
+        <li>
+            <a href="/users/<%= user._id %>/events/<%= event._id %>">              <!-- Add a link around each application, directing to the 'show' page -->
+            <%= event.conferenceTitle %> promoted by <%= event.company %>
+            </a>
+        </li>
+
     <% }) %>
   </ul>
+
 </body>
 </html>
+

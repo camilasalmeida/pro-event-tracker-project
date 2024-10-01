@@ -15,14 +15,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-
 //-------------------\\
 
 router.get('/new', async (req, res) => {
     res.render('events/new.ejs');
 });
 
-//------POST the form-------\\
+//----POST the form-----\\
 
 router.post('/', async (req, res) => {
     try {
@@ -35,6 +34,22 @@ router.post('/', async (req, res) => {
         res.redirect('/')                                                                   // If any errors, log them and redirect back home.
     }
 });
+
+//----Show page for each event----\\
+router.get('/:eventId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);                      // Look up the user from req.session.
+        const event = currentUser.events.id(req.params.eventId);                            // Find the event by the eventId supplied from req.params.
+        res.render('events/show.ejs', {                                                     // Render the show view, passing the application data in the context object.
+            event: event,
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/')
+    }
+});
+
+//--------------\\
 
 module.exports = router;                                                                    // Export the router so we can use it in our main server file.
 
