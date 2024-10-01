@@ -8,9 +8,11 @@ const session = require('express-session');                               // Thi
 const MongoStore = require("connect-mongo");
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
-
+const eventsController = require('./controllers/events.js');              // -> Import the events controller into the server.js.
 
 const app = express();
+
+
 
 //--------------------------------------------------------------------\\
 
@@ -53,7 +55,7 @@ app.get('/', async (req, res) => {
 
 app.use('/auth', authController);                                     // -> That code will funnel any requests starting with /auth to the `authController`.
 app.use(isSignedIn);
-
+app.use('/users/:userId/events', eventsController);                   // -> Link the controller. This tells the server that any incoming requests to /users/:userId/events will be handled by our events controller.
 
 
 
