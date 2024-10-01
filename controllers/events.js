@@ -3,6 +3,11 @@ const router = express.Router();
 const User = require('../models/user.js');
 //---------------------------------------------------------------\\
 
+
+
+
+
+
 router.get('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                   // Look up the user from req.session.
@@ -15,14 +20,12 @@ router.get('/', async (req, res) => {
     }
 });
 
-//-------------------\\
-
+//-------New event page/form ------\\
 router.get('/new', async (req, res) => {
     res.render('events/new.ejs');
 });
 
 //----POST the form-----\\
-
 router.post('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                      // Look up the user from req.session.
@@ -48,6 +51,20 @@ router.get('/:eventId', async (req, res) => {
         res.redirect('/')
     }
 });
+
+//--------Delete event----\\
+router.delete('/:eventId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.events.id(req.params.eventId).deleteOne();                             // Use the Mongoose .deleteOne() method to delete an event using the id supplied from req.params.
+        await currentUser.save();                                                          // Save the changes to the user.
+        await redirect(`/users/${currentUser._id}/events`);                                // Redirect them back to the events index view page.
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
 
 //--------------\\
 

@@ -19,6 +19,14 @@
         <p>Status: <%= event.status %></p>
     <% } %>
 
-    
+<!------------------------- add the logic to the page ☝️ -------------------------------->
+<!-- We will use the method-override to allow us to hit a delete route: -->
+<form                                                                                
+action="/users/<%= user._id %>/events/<%= event._id %>?_method=DELETE" 
+method="POST"
+>
+<button type="submit">Delete this Event</button>
+</form>
+
 </body>
 </html>
