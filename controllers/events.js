@@ -12,7 +12,9 @@ router.get('/', (req, res) => {
     }
 });
 
-
+router.get('/new', async (req, res) => {
+    res.render('events/new.ejs');
+});
 
 
 

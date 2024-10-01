@@ -16,17 +16,22 @@ const eventSchema = new mongoose.Schema({
     date: {
         type: Date,
     },
+    location: {
+        type: String,
+    },
     principalSpeakers: {
         type: [String],
     },
-    postingLink: {
-        type: 
-            String,
+    eventLink: {
+        type: String,
     },
     status: {
         type: String,
-            enum: ['attended', 'booked', 'interested', 'cancelled'],
-        }
+        enum: ['interested', 'booked', 'attended', 'cancelled'],
+        },
+    personalNotes: {
+        type: String,
+    },
 });
 
 

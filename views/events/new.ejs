@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a New Event</title>
+</head>
+
+
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New Event</h1>
+
+
+  <form action="" method="">
+    <label for="company">Company:</label>
+    <input type="text" name="company" id="company">
+    
+    <label for="conferenceTitle">Conference Title:</label>
+    <input type="text" name="conferenceTitle" id="conferenceTitle">
+    
+    <label for="field">Field:</label>
+    <input type="text" name="field" id="field">
+    
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date">
+
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location">
+
+    <label for="principalSpeakers">Principal Speakers:</label>
+    <textarea name="principalSpeakers" id="principalSpeakers"></textarea>
+
+    <label for="eventLink">Event Link:</label>
+    <input type="text" name="eventLink" id="eventLink">
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option value="interested">Interested</option>
+      <option value="booked">Booked</option>
+      <option value="attended">Attended</option>
+      <option value="cancelled">Cancelled</option>
+    </select>
+
+    <label for="personalNotes">Personal Notes:</label>
+    <textarea name="personalNotes" id="personalNotes"></textarea>
+
+    <button type="submit">Add Application</button>
+
+  </form>
+  </body>
+</html>
