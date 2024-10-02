@@ -3,24 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= event.title %></title>
+  <title><%= event.conferenceTitle %></title>
 </head>
 
 
 
 
 <body>
-  <%- include('../partials/_navbar.ejs') %>
-  <h1><%= event.conferenceTitle %> promoted by <%= event.company %></h1>
-    <% if (event.personalNotes) { %>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= event.conferenceTitle %> promoted by <%= event.company %></h1>
+        <% if (event.company) { %>
+            <p>Company: <%= event.company %></p>
+            <% } %>
+        <% if (event.conferenceTitle) { %>
+            <p>Conference Title: <%= event.conferenceTitle %></p>
+            <% } %>
+        <% if (event.field) { %>
+            <p>Field: <%= event.field %></p>
+            <% } %>
+        <% if (event.date) { %>
+            <p>Date: <%= event.date %></p>
+            <% } %>   
+        <% if (event.location) { %>
+            <p>Location: <%= event.location %></p>
+            <% } %>
+        <% if (event.principalSpeakers) { %>
+            <p>Principal Speakers: <%= event.principalSpeakers %></p>
+            <% } %>
+        <% if (event.eventLink) { %>
+            <p>Link: <a href="<%= event.eventLink %>">Visit Conference Website </a></p>
+            <% } %>
+        <% if (event.status) { %>
+            <p>Status: <%= event.status %></p>
+            <% } %>
+        <% if (event.personalNotes) { %>
         <p>Notes: <%= event.personalNotes %></p>
-    <% } %>
-    <% if (event.status) { %>
-        <p>Status: <%= event.status %></p>
-    <% } %>
+            <% } %>
+   
+    <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">         <!-- EDIT -->
+        Edit this Event
+    </a>
 
 <!------------------------- add the logic to the page ☝️ -------------------------------->
-<!-- We will use the method-override to allow us to hit a delete route: -->
+ <!-- We will use the method-override to allow us to hit a delete route: -->
+
 <form                                                                                
 action="/users/<%= user._id %>/events/<%= event._id %>?_method=DELETE" 
 method="POST"

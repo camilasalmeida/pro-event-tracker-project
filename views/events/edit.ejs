@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing <%= event.conferenceTitle %></title>
+</head>
+
+
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%= event.conferenceTitle %> promoted by <%= event.company %></h1>
+
+
+  <form action="/users/<%= user._id %>/events" method="POST">
+    <label for="company">Company:</label>
+    <input 
+    type="text" 
+    name="company" 
+    id="company"
+    value="<%= event.company %>"
+    >
+    <label for="conferenceTitle">Conference Title:</label>
+    <input 
+    type="text" 
+    name="conferenceTitle" 
+    id="conferenceTitle"
+    value="<%= event.conferenceTitle %>"
+    >
+    <label for="field">Field:</label>
+    <input 
+    type="text" 
+    name="field" 
+    id="field"
+    value="<%= event.field %>"
+    >
+    <label for="date">Date:</label>
+    <input 
+    type="date" 
+    name="date" 
+    id="date"
+    value="<%= event.date %>"
+    >
+    <label for="location">Location:</label>
+    <input 
+    type="text" 
+    name="location" 
+    id="location"
+    value="<%= event.location %>"
+    >
+    <label for="principalSpeakers">Principal Speakers:</label>
+    <textarea name="principalSpeakers" id="principalSpeakers"><%= event.principalSpeakers %></textarea>
+
+    <label for="eventLink">Event Link:</label>
+    <input 
+    type="text" 
+    name="eventLink" 
+    id="eventLink"
+    value="<%= event.eventLink %>"
+    >
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option 
+      value="interested"
+        <%= event.status === "interested" ? "selected" : '' %>
+    >
+    Interested
+    </option>
+      <option 
+      value="booked"
+      <%= event.status === "booked" ? "selected" : '' %>
+      > 
+      Booked
+    </option>
+      <option 
+      value="attended"
+      <%= event.status === "attended" ? "selected" : '' %>
+      >
+      Attended
+    </option>
+      <option 
+      value="cancelled"
+      <%= event.status === "cancelled" ? "selected" : '' %>
+      >
+      Cancelled
+    </option>
+    </select>
+
+    <label for="personalNotes">Personal Notes:</label>
+    <textarea name="personalNotes" id="personalNotes"><%= event.personalNotes %></textarea>
+
+    <button type="submit">Add Event</button>
+
+  </form>
+  </body>
+</html>

@@ -3,11 +3,6 @@ const router = express.Router();
 const User = require('../models/user.js');
 //---------------------------------------------------------------\\
 
-
-
-
-
-
 router.get('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                   // Look up the user from req.session.
@@ -25,7 +20,7 @@ router.get('/new', async (req, res) => {
     res.render('events/new.ejs');
 });
 
-//----POST the form-----\\
+//----------POST the form-----------\\
 router.post('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                      // Look up the user from req.session.
@@ -38,7 +33,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-//----Show page for each event----\\
+//-----Show page for each event------\\
 router.get('/:eventId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                      // Look up the user from req.session.
@@ -52,7 +47,7 @@ router.get('/:eventId', async (req, res) => {
     }
 });
 
-//--------Delete event----\\
+//--------Delete event--------\\
 router.delete('/:eventId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -65,8 +60,20 @@ router.delete('/:eventId', async (req, res) => {
     }
 });
 
+//----------Edit route-----------\\
+router.get('/:eventId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const event = currentUser.events.id(req.params.eventId);
+        res.render('events/edit.ejs', {
+            event: event,
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
-//--------------\\
-
+//----------------------------------\\
 module.exports = router;                                                                    // Export the router so we can use it in our main server file.
 
