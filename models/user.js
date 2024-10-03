@@ -12,6 +12,20 @@ const eventSchema = new mongoose.Schema({
     },
     field: {
         type: String,
+        enum: [
+            'Technology',
+            'Marketing',
+            'Health & Wellness',
+            'Finance',
+            'Education',
+            'Arts & Culture',
+            'Business Development',
+            'Networking',
+            'Startups & Entrepreneurship',
+            'Sustainability',
+            'Other',
+    ], 
+    required: true,
     },
     date: {
         type: Date,

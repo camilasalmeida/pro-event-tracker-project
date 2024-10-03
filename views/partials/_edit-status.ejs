@@ -1,0 +1,27 @@
+<label for="status">Status:</label>
+    <select id="status" name="status">
+      <option 
+      value="interested"
+        <%= event.status === "interested" ? "selected" : '' %>
+    >
+    Interested
+    </option>
+      <option 
+      value="booked"
+      <%= event.status === "booked" ? "selected" : '' %>
+      > 
+      Booked
+    </option>
+      <option 
+      value="attended"
+      <%= event.status === "attended" ? "selected" : '' %>
+      >
+      Attended
+    </option>
+      <option 
+      value="cancelled"
+      <%= event.status === "cancelled" ? "selected" : '' %>
+      >
+      Cancelled
+    </option>
+    </select>

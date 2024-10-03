@@ -28,13 +28,9 @@
     id="conferenceTitle"
     value="<%= event.conferenceTitle %>"
     >
-    <label for="field">Field:</label>
-    <input 
-    type="text" 
-    name="field" 
-    id="field"
-    value="<%= event.field %>"
-    >
+
+    <%- include('../partials/_edit-field.ejs') %>                  <!-- Partial Field added -->
+ 
     <label for="date">Date:</label>
     <input 
     type="date" 
@@ -60,33 +56,7 @@
     value="<%= event.eventLink %>"
     >
 
-    <label for="status">Status:</label>
-    <select id="status" name="status">
-      <option 
-      value="interested"
-        <%= event.status === "interested" ? "selected" : '' %>
-    >
-    Interested
-    </option>
-      <option 
-      value="booked"
-      <%= event.status === "booked" ? "selected" : '' %>
-      > 
-      Booked
-    </option>
-      <option 
-      value="attended"
-      <%= event.status === "attended" ? "selected" : '' %>
-      >
-      Attended
-    </option>
-      <option 
-      value="cancelled"
-      <%= event.status === "cancelled" ? "selected" : '' %>
-      >
-      Cancelled
-    </option>
-    </select>
+    <%- include('../partials/_edit-status.ejs') %>
 
     <label for="personalNotes">Personal Notes:</label>
     <textarea name="personalNotes" id="personalNotes"><%= event.personalNotes %></textarea>
