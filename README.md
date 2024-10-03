@@ -1,8 +1,7 @@
 # Pro Event Tracker App!
 
 ## Project Description
- Professional Event Tracker is a user-friendly web application designed to help professionals efficiently manage and track conferences, seminars, and industry events. With a focus on enhancing user engagement and career development, the app allows users to easily add, organize, and monitor events they wish to attend.
-
+ Professional Event Tracker is a user-friendly web application designed to help professionals efficiently manage and track conferences, seminars, and industry events. With a focus on enhancing user engagement and career development, the app allows users to easily add, organize, and monitor events they wish to attend. <br>
 Key features include personalized event listings, detailed information for each event, and status tracking such as interested, booked, and attended. By centralizing event information, Professional Event Tracker empowers users to make informed decisions about their professional growth and networking opportunities. Whether you're a seasoned industry expert or an emerging professional, our app is your essential tool for staying connected in today's fast-paced business environment.
 
 ## Repo Link
