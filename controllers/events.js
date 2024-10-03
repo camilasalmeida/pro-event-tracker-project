@@ -74,6 +74,21 @@ router.get('/:eventId/edit', async (req, res) => {
     }
 });
 
-//----------------------------------\\
+//------------Update PUT route----------------------\\
+router.put('/:eventId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const event = currentUser.events.id(req.params.eventId);
+        event.set(req.body);
+        await currentUser.save();
+        res.redirect(
+            `/users/${currentUser._id}/events`
+        );
+    } catch(error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
 module.exports = router;                                                                    // Export the router so we can use it in our main server file.
 

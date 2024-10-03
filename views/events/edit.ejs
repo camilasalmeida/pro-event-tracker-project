@@ -13,7 +13,7 @@
     <h1>Edit <%= event.conferenceTitle %> promoted by <%= event.company %></h1>
 
 
-  <form action="/users/<%= user._id %>/events" method="POST">
+  <form action="/users/<%= user._id %>/events/<%= event._id %>?_method=PUT" method="POST">
     <label for="company">Company:</label>
     <input 
     type="text" 
@@ -91,7 +91,7 @@
     <label for="personalNotes">Personal Notes:</label>
     <textarea name="personalNotes" id="personalNotes"><%= event.personalNotes %></textarea>
 
-    <button type="submit">Add Event</button>
+    <button type="submit">Edit Event</button>
 
   </form>
   </body>
