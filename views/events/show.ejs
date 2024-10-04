@@ -28,7 +28,7 @@
             <p>Location: <%= event.location %></p>
             <% } %>
         <% if (event.principalSpeakers.length > 1) { %>
-            <p>Principal Speakers: <%= event.principalSpeakers %></p>
+            <p>Principal Speakers: <%= event.principalSpeakers.join(', ') %></p>
             <% } %>
         <% if (event.eventLink) { %>
             <p>Link: <a href="<%= event.eventLink %>" target="_blank" rel="noopener noreferrer">Visit Conference Website </a></p>
