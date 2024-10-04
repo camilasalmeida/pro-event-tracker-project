@@ -120,3 +120,51 @@ input {
     margin: 10px 0;
     font-size: 1.1em;
   }
+
+  /* ----------------INDEX PAGEEEE------------------------- */
+
+  /* public/stylesheets/style.css */
+
+.all-events-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+     
+  .all-events-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 90%;
+  }
+     
+  .add-event-link {
+    padding: 10px;
+    background-color: #ce4866;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1em;
+    padding: 2px 25px;
+    text-decoration: none;
+  }
+     
+  .add-event-link:hover {
+    background-color: #e84a6c;
+  }
+
+  /* -----list of Events----- */
+
+ul {
+    list-style: none;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+     
+  

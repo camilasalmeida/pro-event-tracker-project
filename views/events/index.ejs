@@ -12,9 +12,15 @@
 
 <body>
   <%- include('../partials/_navbar.ejs') %>                                        <!-- Adding the nav partial here -->
-  <h1>Your Events</h1>
-  <a href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
 
+    <div class="all-events-body">
+    <div class="all-events-header">
+ 
+  <h1>Welcome to your space, <%= user.username %>! </h1>
+  <p>I hope you're enjoying the App so far.</p>
+  <h1>Your Events:</h1>
+  <a class="add-event-link" href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
+</div>
   <ul>
     <% events.forEach((event) => { %>
         <li>
@@ -27,7 +33,7 @@
   </ul>
   <h2>> Top 10 Websites that Empower You to Find the Most Relevant and Exciting Events in Your Professional Field Across the United States.</h2>
 
-
+</div>
 
 </body>
 </html>
