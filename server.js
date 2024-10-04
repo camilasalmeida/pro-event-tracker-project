@@ -4,11 +4,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require("method-override");
 const morgan = require('morgan');
-const session = require('express-session');                               // This middleware will automatically manage session data for each user request.
+const session = require('express-session');                                      // This middleware will automatically manage session data for each user request.
 const MongoStore = require("connect-mongo");
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
-const eventsController = require('./controllers/events.js');              // -> Import the events controller into the server.js.
+const eventsController = require('./controllers/events.js');                      // -> Import the events controller into the server.js.
 
 const app = express();
 
@@ -17,10 +17,10 @@ const app = express();
 //--------------------------------------------------------------------\\
 
 const port = process.env.PORT ? process.env.PORT : "3000";
-
+const path = require('path');                                                     // Requiring `path`, which we use in the express.static middleware.
 mongoose.connect(process.env.MONGODB_URI);
 
-const authController = require('./controllers/auth.js');              // -> We'll instruct our Express app to use the `authController` for handling requests that match the /auth URL pattern.
+const authController = require('./controllers/auth.js');                         // -> We'll instruct our Express app to use the `authController` for handling requests that match the /auth URL pattern.
 
 mongoose.connection.on('connected', () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
@@ -29,21 +29,22 @@ mongoose.connection.on('connected', () => {
 //-------------------------- Middleware --------------------------------\\
 
 //app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
-app.use(express.urlencoded({ extended: false }));                     // Middleware to parse URL-encoded data from forms.
-app.use(methodOverride("_method"));                                   // Middleware for using HTTP verbs such as PUT or DELETE.
-app.use(morgan('dev'));                                             // Morgan for logging HTTP requests.
+app.use(express.urlencoded({ extended: false }));                               // Middleware to parse URL-encoded data from forms.
+app.use(methodOverride("_method"));                                             // Middleware for using HTTP verbs such as PUT or DELETE.
+app.use(morgan('dev'));                                                         // Morgan for logging HTTP requests.
+app.use(express.static(path.join(__dirname, 'public')));                         // express.static middleware is designed to serve static files like CSS stylesheets.
 
-app.use(                                                              // Creating a session, configuring it. Session cookie 🍪
+app.use(                                                                       // Creating a session, configuring it. Session cookie 🍪
     session({
         secret: process.env.SESSION_SECRET,
         resave: false,
-        saveUninitialized: true,                                     // This allows us to create an empty session object.
+        saveUninitialized: true,                                               // This allows us to create an empty session object.
         store: MongoStore.create({
          mongoUrl: process.env.MONGODB_URI,
         }),
     })
 );
-app.use(passUserToView);                                              // Should be included before all our routes.
+app.use(passUserToView);                                                      // Should be included before all our routes.
 
 //----------------------------------------------------------------------\\
 
@@ -66,5 +67,3 @@ app.use('/users/:userId/events', eventsController);                   // -> Link
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port} 🎧`);
 });
-
-  

@@ -1,16 +1,24 @@
 <!-- The underscore `_navbar.ejs` is a common naming convention used to indicate that the file is a partial. -->
+<link rel="stylesheet" href="/stylesheets/partials.css" />
 
 
 <nav>
     <% if(user) { %>
-      <a href="/">Home Page</a> 
-      <a href="/users/<%= user._id %>/events">Your Events</a>
-      <a href="/auth/sign-out">Sign Out</a>
-      
+      <div class="navbar">
+        <h1 id="nav-header"> Pro Event Tracker</h1>
+        <div class="nav-links">
+      <a class="authlink" href="/users/<%= user._id %>/events">Your Events</a>
+      <a class="autolink" href="/auth/sign-out">Sign Out</a>
+      </div>
+      </div>
     <% } else { %>
-      <a href="/">Home Page</a> 
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
+      <div class="navbar">
+        <h1 id="nav-header">Pro Event Tracker</h1>
+        <div class="nav-links">
+      <a class="authlink" href="/auth/sign-in">Sign In</a>
+      <a class="authlink" href="/auth/sign-up">Sign Up</a>
+      </div>
+      </div>
     <% } %>
   </nav>
   
