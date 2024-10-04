@@ -8,10 +8,15 @@
   </head>
 
 
+  <div class="nav-div"> 
+    <%- include('../partials/_navbar.ejs') %>
+</div>
 
   <body>
+   
+
     <div class="signin-page"> 
-    <%- include('../partials/_navbar.ejs') %>                                  <!-- Adding the nav partial here -->
+    
     <div class="signin-container"> 
     <h1>Sign in</h1>
     <form action="/auth/sign-in" method="POST">
