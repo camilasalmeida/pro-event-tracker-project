@@ -43,7 +43,6 @@ app.use(                                                              // Creatin
         }),
     })
 );
-
 app.use(passUserToView);                                              // Should be included before all our routes.
 
 //----------------------------------------------------------------------\\

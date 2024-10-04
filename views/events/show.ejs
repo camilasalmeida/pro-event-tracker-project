@@ -27,7 +27,7 @@
         <% if (event.location) { %>
             <p>Location: <%= event.location %></p>
             <% } %>
-        <% if (event.principalSpeakers) { %>
+        <% if (event.principalSpeakers.length > 1) { %>
             <p>Principal Speakers: <%= event.principalSpeakers %></p>
             <% } %>
         <% if (event.eventLink) { %>

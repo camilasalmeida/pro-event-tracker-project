@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Apps</title>
+  <title>Your Events</title>
   <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" /> -->
 </head>
 
@@ -11,7 +11,7 @@
 
 <body>
   <%- include('../partials/_navbar.ejs') %>                                        <!-- Adding the nav partial here -->
-  <h1>Your Apps</h1>
+  <h1>Your Events</h1>
   <a href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
 
   <ul>
@@ -25,8 +25,6 @@
     <% }) %>
   </ul>
   <h2>> Top 10 Websites that Empower You to Find the Most Relevant and Exciting Events in Your Professional Field Across the United States.</h2>
-
-
 
 
 

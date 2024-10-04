@@ -20,11 +20,12 @@ router.get('/new', async (req, res) => {
     res.render('events/new.ejs');
 });
 
-//----------POST the form-----------\\
+//----------POST CREATING the form-----------\\
 router.post('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                      // Look up the user from req.session.
         currentUser.events.push(req.body);                                                  // Push req.body (the new form data object) to the events array of the current user.
+        
         await currentUser.save();                                                           // Save changes to the user.
         res.redirect(`/users/${currentUser._id}/events`);                                   // Redirect them back to the events index view.
     } catch (error) {
@@ -38,6 +39,7 @@ router.get('/:eventId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);                      // Look up the user from req.session.
         const event = currentUser.events.id(req.params.eventId);                            // Find the event by the eventId supplied from req.params.
+        console.log(event);
         res.render('events/show.ejs', {                                                     // Render the show view, passing the application data in the context object.
             event: event,
         });
