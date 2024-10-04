@@ -13,7 +13,7 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Event</h1>
 
-
+    <div class="new-body">
   <form action="/users/<%= user._id %>/events" method="POST">
     <label for="company">Company:</label>
     <input type="text" name="company" id="company">
@@ -66,5 +66,6 @@
     <button type="submit">Add Event</button>
 
   </form>
+  </div>
   </body>
 </html>

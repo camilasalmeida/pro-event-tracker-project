@@ -18,7 +18,7 @@
  
   <h1>Welcome to your space, <%= user.username %>! </h1>
   <p>I hope you're enjoying the App so far.</p>
-  <h1>Your Events:</h1>
+  <h2>Your Events:</h1>
   <a class="add-event-link" href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
 </div>
   <ul>
@@ -28,10 +28,21 @@
             <%= event.conferenceTitle %> promoted by <%= event.company %>
             </a>
         </li>
-
     <% }) %>
   </ul>
-  <h2>> Top 10 Websites that Empower You to Find the Most Relevant and Exciting Events in Your Professional Field Across the United States.</h2>
+  
+  <h3>> Top 10 Websites That Will Inspire and Blow Your Mind:</h3>
+  <ul>
+    <li>
+      <a href="https://techsponyc.com/new-york-tech-events/" target="_blank">TechSponyC</a>
+    </li>
+    <li>
+      <a href="//www.eventyco.com/events/conferences/tech/new-york-city,ny,united-states#google_vignette">Eventyco</a>
+    </li>
+    <li>
+      <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB">The AI Summit New York</a>
+    </li>
+  </ul>
 
 </div>
 

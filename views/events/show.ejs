@@ -12,7 +12,15 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="show-body">
+        <div class="show-header">
+    
     <h1><%= event.conferenceTitle %> promoted by <%= event.company %></h1>
+   
+              <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">         <!-- EDIT -->
+        Edit this Event
+    </a>
+
         <% if (event.company) { %>
             <p>Company: <%= event.company %></p>
             <% } %>
@@ -42,10 +50,6 @@
             <% } %>
    
     
-    <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">         <!-- EDIT -->
-        Edit this Event
-    </a>
-
 <!------------------------- add the logic to the page ☝️ -------------------------------->
  <!-- We will use the method-override to allow us to hit a delete route: -->
 
@@ -55,6 +59,9 @@ method="POST"
 >
 <button type="submit">Delete this Event</button>
 </form>
+
+</div>
+</div>
 
 </body>
 </html>

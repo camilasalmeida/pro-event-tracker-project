@@ -11,6 +11,8 @@
 
   <body>
     <%- include('../partials/_navbar.ejs') %>
+
+    <div class="edit-body">
     <h1>Edit <%= event.conferenceTitle %> promoted by <%= event.company %></h1>
 
   <form action="/users/<%= user._id %>/events/<%= event._id %>?_method=PUT" method="POST">
@@ -64,5 +66,6 @@
     <button type="submit">Edit Event</button>
 
   </form>
+  </div>
   </body>
 </html>
