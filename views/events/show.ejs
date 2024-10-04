@@ -31,7 +31,7 @@
             <p>Principal Speakers: <%= event.principalSpeakers %></p>
             <% } %>
         <% if (event.eventLink) { %>
-            <p>Link: <a href="<%= event.eventLink %>">Visit Conference Website </a></p>
+            <p>Link: <a href="<%= event.eventLink %>" target="_blank" rel="noopener noreferrer">Visit Conference Website </a></p>
             <% } %>
         <% if (event.status) { %>
             <p>Status: <%= event.status %></p>
@@ -40,6 +40,7 @@
         <p>Notes: <%= event.personalNotes %></p>
             <% } %>
    
+    
     <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">         <!-- EDIT -->
         Edit this Event
     </a>

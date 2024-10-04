@@ -29,6 +29,7 @@ const user = await User.create(req.body);
 
 req.session.user = {
     username: user.username,
+    _id: user._id,
   };
   
   req.session.save(() => {

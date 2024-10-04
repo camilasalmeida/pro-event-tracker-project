@@ -28,9 +28,10 @@ mongoose.connection.on('connected', () => {
 
 //-------------------------- Middleware --------------------------------\\
 
+//app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use(express.urlencoded({ extended: false }));                     // Middleware to parse URL-encoded data from forms.
 app.use(methodOverride("_method"));                                   // Middleware for using HTTP verbs such as PUT or DELETE.
-//app.use(morgan('dev'));                                             // Morgan for logging HTTP requests.
+app.use(morgan('dev'));                                             // Morgan for logging HTTP requests.
 
 app.use(                                                              // Creating a session, configuring it. Session cookie 🍪
     session({
@@ -48,7 +49,9 @@ app.use(passUserToView);                                              // Should 
 //----------------------------------------------------------------------\\
 
 app.get('/', async (req, res) => {
+    console.log(req.session);
     if (req.session.user) {                                            // Check if the user is signed in.
+        console.log('I made it here!')
         res.redirect(`/users/${req.session.user._id}/events`);         // Redirect signed-in users to their events index.
     } else {
     res.render('index.ejs');                                           // Show the homepage for users who are not signed in.
@@ -56,16 +59,9 @@ app.get('/', async (req, res) => {
 });
 
 //----------------\\
-
-
-
-
 app.use('/auth', authController);                                     // -> That code will funnel any requests starting with /auth to the `authController`.
 app.use(isSignedIn);
 app.use('/users/:userId/events', eventsController);                   // -> Link the controller. This tells the server that any incoming requests to /users/:userId/events will be handled by our events controller.
-
-
-
 
 //-----------------------------------------------------------------------\\
 app.listen(port, () => {

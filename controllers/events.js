@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         });
         } catch (error) {
         console.log(error)
-        res.redirect('/')
+        res.send(error);
     }
 });
 
@@ -53,7 +53,8 @@ router.delete('/:eventId', async (req, res) => {
         const currentUser = await User.findById(req.session.user._id);
         currentUser.events.id(req.params.eventId).deleteOne();                             // Use the Mongoose .deleteOne() method to delete an event using the id supplied from req.params.
         await currentUser.save();                                                          // Save the changes to the user.
-        await redirect(`/users/${currentUser._id}/events`);                                // Redirect them back to the events index view page.
+       //console.log('Form deleted')
+        res.redirect(`/users/${currentUser._id}/events`);                                      // Redirect them back to the events index view page.
     } catch (error) {
         console.log(error);
         res.redirect('/');
@@ -82,7 +83,7 @@ router.put('/:eventId', async (req, res) => {
         event.set(req.body);
         await currentUser.save();
         res.redirect(
-            `/users/${currentUser._id}/events`
+            `/users/${currentUser._id}/events/${req.params.eventId}`
         );
     } catch(error) {
         console.log(error);
