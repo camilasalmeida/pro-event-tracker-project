@@ -2,18 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 
-
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #ccd7e2;
+    background-color: #201c1c;
 }
 
 .index-body {
-    background-image: url('https://plus.unsplash.com/premium_photo-1681487469745-91d1d8a5836b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://media.istockphoto.com/id/1210965643/photo/skyscrapers-in-midtown-manhattan-new-york-city.jpg?s=612x612&w=is&k=20&c=QpsRk9MSkGf7IcRFZbFJwjo9cpi_hGppmzTHijTiRrI=');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -41,6 +40,7 @@ body {
     height: 100%;
 }
 
+
 .auth-links {
     display: flex;
     flex-direction: column;
@@ -49,6 +49,8 @@ body {
     margin: 0 80px 0 0;
     height: 100%;
 }
+
+
 
 .signup-link,
 .signin-link {
@@ -87,8 +89,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('https://media.istockphoto.com/id/1210965643/photo/skyscrapers-in-midtown-manhattan-new-york-city.jpg?s=612x612&w=is&k=20&c=QpsRk9MSkGf7IcRFZbFJwjo9cpi_hGppmzTHijTiRrI=');
     width: 100%;
     height: 100%;
+    
 }
 
 h1 {
@@ -127,6 +131,7 @@ input {
   /* ----------------INDEX PAGEEEE------------------------- */
 
 .all-events-body {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,8 +145,14 @@ input {
     align-items: center;
     padding: 10px 20px;
     width: 90%;
+    background-color: aqua;
+    
   }
      
+  .websites-list {
+    background-color: rgb(165, 162, 158);
+
+  }
   .add-event-link {
     padding: 10px;
     background-color: #ce4866;

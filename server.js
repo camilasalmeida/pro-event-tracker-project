@@ -14,7 +14,6 @@ const eventsController = require('./controllers/events.js');                    
 const app = express();
 
 
-
 //--------------------------------------------------------------------\\
 
 const port = process.env.PORT ? process.env.PORT : "3000";
