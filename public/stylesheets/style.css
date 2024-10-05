@@ -9,6 +9,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #201c1c;
+    margin: 0px;
 }
 
 /*-------------------------------INDEX PAGE ----------------------*/
@@ -100,6 +101,7 @@ body {
 }
 
 h1 {
+    font-size: 1.6em;
     color: white;
 }
 
@@ -134,6 +136,8 @@ input {
 
   /* ----------------INDEX PAGEEEE------------------------- */
 
+
+  
 .hero-index-events-container {
     background-image: url('/images/test-logo.jpg');
     background-repeat: no-repeat;
@@ -164,27 +168,34 @@ input {
 
 }
 .hero-index-event-1 {
-    background-color: #d07676;
+    background-color: #0c0c0c;
+    color: white;
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px 0px;
+    border-radius: 0.2em
 }
 
 
 .hero-index-event-2 {
-    background-color: #3d3441;
+    background-color: hsla(300, 3%, 30%, 0.995);
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 0.2em
+
 }
 
+a {
+    text-decoration: none;
+}
 .hero-index-events-header {
-    font-size: 0.9em;
+    font-size: 0.7em;
     font-weight: bold;
     
 }
@@ -206,6 +217,8 @@ input {
 
   /* -----list of Events----- */
 
+  /* *********************************** */
+
 .hero-index-your-events {
     list-style: none;
     width: 90%;
@@ -214,13 +227,16 @@ input {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-
+    color: whitesmoke;
   }
 
+  /* *********************************** */
+
   .hero-index-events-header {
+    width: 85%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     padding-bottom: 0%;
 
@@ -232,10 +248,19 @@ input {
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
-
+    background-color: rgb(34, 33, 33);
 }
 
+.websites-list-links-1 {
+    padding-bottom: 6%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    padding-bottom: 0%;
 
+}
 
 .main-some-post-header {
     font-size: 0.4em;
@@ -245,10 +270,11 @@ input {
     background-position: center; /* Aligns the background image to the bottom */
     height: 180px; /* Adjust height as needed */
     width: 100%;
-    margin: 20px; 
+    margin: px; 
+    color: white;
+    font-family:'Times New Roman', Times, serif;
 
 }
-
 
      
     /* ----------------NEW AND EDIT FORMS ------------------------- */
