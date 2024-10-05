@@ -12,8 +12,6 @@ body {
     margin: 0px;
 }
 
-/*-------------------------------INDEX PAGE ----------------------*/
-
 .page-container {
     background-image: url('/images/index-page.jpg');
     background-repeat: no-repeat;
@@ -35,9 +33,6 @@ body {
     border-radius: 10px; /* Rounded corners */
 }
 
-
-/* ----------------Signin/ Signup ------------------------- */
-
 .signin-container,
 .signup-container {
     background-image: url('/images/sf.jpg');
@@ -50,7 +45,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    
     
 }
 .signin-header {
@@ -92,9 +86,9 @@ input {
     border: 1px solid rgb(182, 182, 182);
     padding: 8px;
     border-radius: 20px;
-  }
+}
 
-  button {
+button {
     padding: 8px;
     background-color: #ce4866;
     color: white;
@@ -102,23 +96,18 @@ input {
     border: none;
     margin: 11px 0 10px 0;
     font-size: 1.1em;
-  }
+}
 
-  /* ----------------INDEX PAGEEEE------------------------- */
-
-
-  
 .hero-index-events-container {
     background-image: url('/images/test-logo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-     width: 100vw;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
-    
 }
 
 .hero-index-events-header {
@@ -163,24 +152,20 @@ a {
     font-weight: bold;
 }
 
-  .add-event-link {
+.add-event-link {
     padding: 10px;
-  background-color: #ce4866;
-  color: white;
-  border-radius: 30px;
-  border: none;
-  font-size: 0.5em;
-  padding: 2px 25px;
-  text-decoration: none;
-  }
+    background-color: #ce4866;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.5em;
+    padding: 2px 25px;
+    text-decoration: none;
+}
      
-  .add-event-link:hover {
+.add-event-link:hover {
     background-color: #e84a6c;
-  }
-
-  /* -----list of Events----- */
-
-  /* *********************************** */
+}
 
 .hero-index-your-events {
     list-style: none;
@@ -191,22 +176,17 @@ a {
     align-items: center;
     text-decoration: none;
     color: whitesmoke;
-  }
+}
 
-  /* *********************************** */
-
-  .hero-index-events-header {
+.hero-index-events-header {
     width: 85%;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
     padding-bottom: 0%;
-    
+}
 
-
-  }
-/* ----------*/
 .websites-list {
     display: flex;
     flex-direction: column;
@@ -237,37 +217,34 @@ a {
     color: white;
     font-family:'Times New Roman', Times, serif;
 }
-    /* ----------------NEW AND EDIT FORMS ------------------------- */
 
-    .new-body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%
-    }
+.new-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
 
-    .new-body> form,
-    .edit-body> form {
-        height: 110%;
-    }
+.new-body> form,
+.edit-body> form {
+    height: 110%;
+}
 
-    textarea,
-    select {
-        border: 1px solid rgb(182, 182, 182);
-  border-radius: 10px;
-  padding: 5px;
-    }
+textarea,
+select {
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 10px;
+    padding: 5px;
+}
 
-    select {
-        margin-bottom: 10px;
-      }
+select {
+    margin-bottom: 10px;
+}
 
-      .edit-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
-
-     
+.edit-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
