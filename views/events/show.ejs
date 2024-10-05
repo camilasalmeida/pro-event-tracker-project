@@ -11,10 +11,12 @@
     <%- include('../partials/_navbar.ejs') %>
     <div class="show-body">
         <div class="show-header">
-    <h1><%= event.conferenceTitle %> promoted by <%= event.company %></h1>
-              <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">         
-        Edit this Event
-    </a>
+               <h1><%= event.conferenceTitle %> promoted by <%= event.company %></h1>
+        <div class="edit-button"> 
+                <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">         
+                 Edit this Event
+            </a>
+        </div>
         <% if (event.company) { %>
             <p>Company: <%= event.company %></p>
             <% } %>
@@ -46,7 +48,7 @@
 action="/users/<%= user._id %>/events/<%= event._id %>?_method=DELETE" 
 method="POST"
 >
-<button type="submit">Delete this Event</button>
+<button class="delete-button" type="submit">Delete this Event</button>
 </form>
 </div>
 </div>
