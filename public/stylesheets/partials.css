@@ -26,7 +26,7 @@
     text-decoration: none;
     margin-right:10px;
     margin-left: 0px;
-    color: #4b598e;
+    color: #0505d3;
     border: 0.9px solid transparent; 
     padding: 0.3px 1.5px;
 }
@@ -36,3 +36,7 @@
     background-color: white;
 }
 
+.footer {
+    color: rgb(206, 209, 201);
+    font-size:x-small;
+}

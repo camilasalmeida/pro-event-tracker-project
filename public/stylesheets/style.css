@@ -25,6 +25,10 @@ body {
     padding-bottom: 0px;
 }
 
+.tracker-header {
+    font-size: 40px;
+}
+
 .hero-index-container {
     text-align: center; 
     max-width: 600px; 
@@ -99,7 +103,7 @@ button {
 }
 
 .welcome-header {
-    font-size: 1.4em;
+    font-size: 1.9em;
 }
 
 .hero-index-events-container {
@@ -200,6 +204,7 @@ a {
 }
 
 .websites-list-links-1 {
+    color: white;
     padding-bottom: 6%;
     width: 85%;
     display: flex;
@@ -209,6 +214,15 @@ a {
     padding-bottom: 0%;
 }
 
+.website-list-header {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    background-color: rgb(34, 33, 33);
+    color: whitesmoke;
+
+}
 .main-some-post-header {
     font-size: 0.4em;
     background-image: url('/images/test-logo.jpg');
