@@ -14,75 +14,25 @@ body {
 
 /*-------------------------------INDEX PAGE ----------------------*/
 
-.index-body {
-    background-image: url('https://media.istockphoto.com/id/1210965643/photo/skyscrapers-in-midtown-manhattan-new-york-city.jpg?s=612x612&w=is&k=20&c=QpsRk9MSkGf7IcRFZbFJwjo9cpi_hGppmzTHijTiRrI=');
+.page-container {
+    background-image: url('/images/index-page.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    background-position: center;
+    height: 100vh;
     width: 100vw;
     color: white;
+    display: flex; /* Centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
-.main-header {
-    font-weight: bold;
-    color: white;
-    font-size: 5.6em;
-    margin: -160px 20px 0 20px;
-  }
-
-.subheader {
-    margin:  0 20px 0 20px;
-    font-size: 1.4em;
-}
-
-.index-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
-
-.auth-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 80px 0 0;
-    height: 100%;
-}
-
-
-
-.signup-link,
-.signin-link {
-    text-decoration: none;
-    font-size: 1.5em;
-    padding: 8px 0;
-    border-radius: 25px;
-    width: 10em;
-    text-align: center;
-}
-
-.signup-link {
-    background-color: #ce4866;
-    color: white;
-    margin: 0 0 20px 0;
-}
-
-.signup-link:hover {
-    background-color: #ff5378;
-}
-
-.signin-link {
-    background-color: #f6e7e7;
-    color: #1c2e5b;
-    margin: 20px 0 0 0;
-}
-
-.signin-link:hover {
-    background-color: #ffffff;
+.hero-index-container {
+    text-align: center; /* Center the text */
+    max-width: 600px; /* Limit the width for readability */
+    padding: 20px; /* Add padding */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    border-radius: 10px; /* Rounded corners */
 }
 
 
@@ -90,19 +40,39 @@ body {
 
 .signin-container,
 .signup-container {
+    background-image: url('/images/sf.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('https://media.istockphoto.com/id/1210965643/photo/skyscrapers-in-midtown-manhattan-new-york-city.jpg?s=612x612&w=is&k=20&c=QpsRk9MSkGf7IcRFZbFJwjo9cpi_hGppmzTHijTiRrI=');
-    width: 100%;
-    height: 100%;
+    padding: 40px;
+    
     
 }
-
-h1 {
-    font-size: 1.6em;
+.signin-header {
+    font-size: 0.7em;
+    width: 20%;
+    text-align: center;
     color: white;
+    background-color: rgba(0, 0, 0, 0.749);
+    border-radius: 1.5rem;
+    padding: 5px, 40px;
+    margin: 12px;
+}
+
+.signup-header {
+    font-size: 0.7em;
+    width: 40%;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.749);
+    border-radius: 1.5rem;
+    padding: 5px, 40px;
+    margin: 12px;
 }
 
 form {
@@ -130,7 +100,7 @@ input {
     color: white;
     border-radius: 30px;
     border: none;
-    margin: 10px 0;
+    margin: 11px 0 10px 0;
     font-size: 1.1em;
   }
 
@@ -157,15 +127,11 @@ input {
     color: white;
     text-align: center;
     display: flex;
-
-
 }
 
 .hero-index-events-subheader {
     font-size: 0.7em;
     display: flex;
-    
-
 }
 .hero-index-event-1 {
     background-color: #0c0c0c;
@@ -176,9 +142,8 @@ input {
     justify-content: center;
     align-items: center;
     padding: 10px 0px;
-    border-radius: 0.2em
+    border-radius: 0.2em;
 }
-
 
 .hero-index-event-2 {
     background-color: hsla(300, 3%, 30%, 0.995);
@@ -188,7 +153,6 @@ input {
     justify-content: center;
     align-items: center;
     border-radius: 0.2em
-
 }
 
 a {
@@ -197,7 +161,6 @@ a {
 .hero-index-events-header {
     font-size: 0.7em;
     font-weight: bold;
-    
 }
 
   .add-event-link {
@@ -239,6 +202,7 @@ a {
     justify-content:flex-start;
     align-items: center;
     padding-bottom: 0%;
+    
 
 
   }
@@ -259,7 +223,6 @@ a {
     justify-content: right;
     align-items: center;
     padding-bottom: 0%;
-
 }
 
 .main-some-post-header {
@@ -273,10 +236,7 @@ a {
     margin: px; 
     color: white;
     font-family:'Times New Roman', Times, serif;
-
 }
-
-     
     /* ----------------NEW AND EDIT FORMS ------------------------- */
 
     .new-body {
@@ -309,3 +269,5 @@ a {
         align-items: center;
         height: 100%;
       }
+
+     

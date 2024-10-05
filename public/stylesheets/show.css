@@ -1,0 +1,17 @@
+
+body {
+    background-color: black;
+}
+.show-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    border-radius: 30px;
+    background-color: 	#484848;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0
+    0.2);
+
+  }

@@ -5,7 +5,7 @@
 <nav>
     <% if(user) { %>
       <div class="navbar">
-        <img src="/images/logo.jpg" alt="Logo" width=80" />
+        <img src="/images/logo.jpg" alt="Logo" width="105" />
         <!-- <h1 id="nav-header">Pro Event Tracker</h1> -->
         <div class="nav-links">
       <a class="authlink" href="/users/<%= user._id %>/events">Home Page</a>
@@ -15,11 +15,11 @@
       
     <% } else { %>
       <div class="navbar">
-        <img src="/images/logo.jpg" alt="Logo" width="80" />
+        <img src="/images/logo.jpg" alt="Logo" width="105" />
         <!-- <h1 id="nav-header">Pro Event Tracker</h1> -->
         <div class="nav-links">
-      <a class="authlink" href="/auth/sign-in">Sign In</a>
-      <a class="authlink" href="/auth/sign-up">Sign Up</a>
+      <a class="authlink" href="/auth/sign-in">Sign in</a>
+      <a class="authlink" href="/auth/sign-up">Sign up</a>
       </div>
       </div>
     <% } %>

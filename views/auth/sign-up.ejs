@@ -11,8 +11,11 @@
   <body>
     
     <%- include('../partials/_navbar.ejs') %>                                  <!-- Adding the nav partial here -->
+    <div class="signup-page"> 
     <div class="signup-container"> 
+      <div class="signup-header"> 
     <h1>Create a new account!</h1>
+    </div>
     <form action="/auth/sign-up" method="POST">
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" required />
@@ -30,6 +33,7 @@
 
       <button type="submit">Sign up</button>
     </form>
+   </div>
    </div>
 
    <%- include('../partials/_footer.ejs') %>  
