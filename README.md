@@ -22,5 +22,5 @@ Professional Event Tracker is a user-friendly web application designed to help p
 
 ### Potential Implementations
 I would like to implement a recommendation function into the AAU app. This feature would provide users with event recommendations based on their interests and previous interactions, helping them discover new experiences. <br>
-Additionally, as I continue my learning journey, I would like to introduce new and sophisticated features, design elements, and functionalities that my professional growth and skills development.
+Additionally, as I continue my learning journey, I would like to introduce new and sophisticated features, design elements, and functionalities that reflect my professional growth and skills improvement.
 
