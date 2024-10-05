@@ -8,20 +8,17 @@
   <title>Add a New Event</title>
 </head>
 
-
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Event</h1>
-
     <div class="new-body">
-  <form action="/users/<%= user._id %>/events" method="POST">
+    <form action="/users/<%= user._id %>/events" method="POST">
     <label for="company">Company:</label>
     <input type="text" name="company" id="company" required>
-    
     <label for="conferenceTitle">Conference Title:</label>
     <input type="text" name="conferenceTitle" id="conferenceTitle" required>
-    
     <label for="field">Field:</label>
+    
     <select id="field" name="field" required>
       <option value="" disabled selected>Select a Field</option>
       <option value="Technology">Technology</option>
@@ -36,38 +33,28 @@
       <option value="Sustainability">Sustainability</option>
       <option value="Other">Other</option>
     </select>
-    
     <label for="date">Date:</label>
     <input type="date" name="date" id="date">
-
     <label for="location">Location:</label>
     <input type="text" name="location" id="location">
-
     <label for="principalSpeakers">Principal Speakers:</label>
     <textarea name="principalSpeakers" id="principalSpeakers"></textarea>
-    <!-- <input type="text" name="principalSpeakers" >
-    <input type="text" name="principalSpeakers" > -->
-
-
     <label for="eventLink">Event Link:</label>
     <input type="url" name="eventLink" id="eventLink">
-
     <label for="status">Status:</label>
+
     <select id="status" name="status">
       <option value="interested">Interested</option>
       <option value="booked">Booked</option>
       <option value="attended">Attended</option>
       <option value="cancelled">Cancelled</option>
     </select>
-
     <label for="personalNotes">Personal Notes:</label>
     <textarea name="personalNotes" id="personalNotes"></textarea>
 
     <button type="submit">Add Event</button>
-
   </form>
   </div>
-
   <%- include('../partials/_footer.ejs') %>  
   </body>
 </html>

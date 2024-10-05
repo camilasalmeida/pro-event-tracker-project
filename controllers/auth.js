@@ -1,57 +1,48 @@
-const express = require('express');                                                                // Import express.
-const router = express.Router();                                                                   // Creating a new router instance from the Express Framework. Creating a new router object, which you can use to define specific routes for your application.
-const User = require('../models/user.js');                                                         // Since we want this route to create a new User in the database, we need first to import the User model into this file.
-const bcrypt = require('bcrypt');                                                                  // -> Hashing library.
-
-//------------------------------------------------------------------------------\\
+const express = require('express');                                                                
+const router = express.Router();                                                                   
+const User = require('../models/user.js');                                                        
+const bcrypt = require('bcrypt');                                                                  
 
 router.get('/sign-up', (req, res) => {
     res.render('auth/sign-up.ejs');
 });
 
-//------------- POST SIGN UP ----------\\
-//POST - create the controller function to handle the request.
-router.post('/sign-up', async (req, res) => {                                                      // Using async because this function will eventually require a database call.
-    //res.send('Form submission accepted!');
-
-const userInDatabase = await User.findOne({ username: req.body.username });                        // Check the database for any existing user with that username.
+router.post('/sign-up', async (req, res) => {                                                      
+    
+const userInDatabase = await User.findOne({ username: req.body.username });                        
 if ( userInDatabase ) {
     return res.send(`Username already taken! Return to <a href="/auth/sign-up">Sign up</a> page!`)
 }
-if (req.body.password !== req.body.confirmPassword) {                                              // Check if password and confirmPassaword match.
+if (req.body.password !== req.body.confirmPassword) {                                              
     return res.send(`Password and Confirm Password must match! Return to <a href="/auth/sign-up">Sign up</a> page!`)
 }
-const hashedPassword = bcrypt.hashSync(req.body.password, 10) ;                                   // -> Hashing the password.
+const hashedPassword = bcrypt.hashSync(req.body.password, 10) ;                                  
 req.body.password = hashedPassword;
 
 const user = await User.create(req.body);
-//res.send(`Thanks for signing up ${user.username}!`);
 
 req.session.user = {
     username: user.username,
     _id: user._id,
-  };
+};
   
-  req.session.save(() => {
+req.session.save(() => {
     res.redirect("/");
-  });
+});
 });
 
-//-----------------------//
 router.get('/sign-in', async (req, res) => {
     res.render('auth/sign-in.ejs');
 });
 
-//------------ POST SIGN IN --------------//
-router.post('/sign-in', async (req, res) => {
-    //res.send('Request to sign in received!');
+router.post('/sign-in', async (req, res) => { 
 
-const userInDatabase = await User.findOne({ username: req.body.username });                         // Confirming if a User exists.
+const userInDatabase = await User.findOne({ username: req.body.username });                         
 if ( !userInDatabase ) {
-    return res.send(`**Login failed. Please try it again! Return to <a href="/auth/sign-in">Sign in</a> page!`);
+    return res.send(`Login failed. Please try it again! Return to <a href="/auth/sign-in">Sign in</a> page!`);
 }
 
-const validPassword = bcrypt.compareSync(                                                           // Comparing password with the database.
+const validPassword = bcrypt.compareSync(                                                           
     req.body.password,
     userInDatabase.password
 );
@@ -59,21 +50,18 @@ if (!validPassword) {
     return res.send(`Login failed. Please try it again! Return to <a href="/auth/sign-in">Sign in</a> page!`);
 }
 
-req.session.user = {                                                                                // This code sets the user retrieved from the database as the user in the newly created session.
-    username: userInDatabase.username,
+req.session.user = {                                                                                
     _id: userInDatabase._id
 };
 
 req.session.save(() => {
     res.redirect("/");
-  })});
+})});
 
-//---------------------\\
 router.get('/sign-out', async (req, res) => {
     req.session.destroy(() => {
         res.redirect("/");
     });
 });
 
-//------------------------------------------------------------------------------\\
-module.exports = router;                              // Export router
+module.exports = router;                             

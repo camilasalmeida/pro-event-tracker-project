@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');                      // Import mongoose package.
-//-----------------------------------------------\\
+const mongoose = require('mongoose');                      
 
 const eventSchema = new mongoose.Schema({ 
     company: {
@@ -48,8 +47,7 @@ const eventSchema = new mongoose.Schema({
     },
 });
 
-
-const userSchema = new mongoose.Schema({                   // Create the User Schema.
+const userSchema = new mongoose.Schema({                   
     username: {
         type: String,
         required: true,
@@ -61,6 +59,6 @@ const userSchema = new mongoose.Schema({                   // Create the User Sc
     events: [eventSchema],
 });
 
-const User = mongoose.model('User', userSchema);           // Register/create the model.
+const User = mongoose.model('User', userSchema);           
 
-module.exports = User;                                     // Export the model.
+module.exports = User;                                    

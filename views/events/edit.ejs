@@ -11,10 +11,8 @@
 
   <body>
     <%- include('../partials/_navbar.ejs') %>
-
     <div class="edit-body">
     <h1>Edit <%= event.conferenceTitle %> promoted by <%= event.company %></h1>
-
   <form action="/users/<%= user._id %>/events/<%= event._id %>?_method=PUT" method="POST">
     <label for="company">Company:</label>
     <input 
@@ -30,9 +28,7 @@
     id="conferenceTitle"
     value="<%= event.conferenceTitle %>"
     >
-
-    <%- include('../partials/_edit-field.ejs') %>                  <!-- Partial Field added -->
- 
+    <%- include('../partials/_edit-field.ejs') %>                  
     <label for="date">Date:</label>
     <input 
     type="date" 
@@ -49,7 +45,6 @@
     >
     <label for="principalSpeakers">Principal Speakers:</label>
     <textarea name="principalSpeakers" id="principalSpeakers"><%= event.principalSpeakers %></textarea>
-
     <label for="eventLink">Event Link:</label>
     <input 
     type="text" 
@@ -57,17 +52,12 @@
     id="eventLink"
     value="<%= event.eventLink %>"
     >
-
     <%- include('../partials/_edit-status.ejs') %>
-
     <label for="personalNotes">Personal Notes:</label>
     <textarea name="personalNotes" id="personalNotes"><%= event.personalNotes %></textarea>
-
     <button type="submit">Edit Event</button>
-
   </form>
   </div>
-
   <%- include('../partials/_footer.ejs') %>  
   </body>
 </html>

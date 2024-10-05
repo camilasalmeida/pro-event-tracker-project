@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -20,17 +19,17 @@ body {
     height: 100vh;
     width: 100vw;
     color: white;
-    display: flex; /* Centering content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
 .hero-index-container {
-    text-align: center; /* Center the text */
-    max-width: 600px; /* Limit the width for readability */
-    padding: 20px; /* Add padding */
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
-    border-radius: 10px; /* Rounded corners */
+    text-align: center; 
+    max-width: 600px; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px; 
 }
 
 .signin-container,
@@ -98,6 +97,10 @@ button {
     font-size: 1.1em;
 }
 
+.welcome-header {
+    font-size: 1.4em;
+}
+
 .hero-index-events-container {
     background-image: url('/images/test-logo.jpg');
     background-repeat: no-repeat;
@@ -111,9 +114,9 @@ button {
 }
 
 .hero-index-events-header {
-    font-size: 0.9em;
     font-weight: bold;
     color: white;
+    font-size: 0.9em;
     text-align: center;
     display: flex;
 }
@@ -210,8 +213,8 @@ a {
     background-image: url('/images/test-logo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; /* Aligns the background image to the bottom */
-    height: 180px; /* Adjust height as needed */
+    background-position: center; 
+    height: 180px; 
     width: 100%;
     margin: px; 
     color: white;

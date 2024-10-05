@@ -11,28 +11,20 @@
   <div class="nav-div"> 
     <%- include('../partials/_navbar.ejs') %>
 </div>
-
   <body>
-   
-
     <div class="signin-page"> 
-    
     <div class="signin-container"> 
       <div class="signin-header"> 
     <h1>Sign in</h1>
   </div>
-  
     <form action="/auth/sign-in" method="POST">
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" required />
-
       <label for="password">Password:</label>
       <input type="password" name="password" id="password" required />
-
       <button type="submit">Sign in</button>
     </form>
   </div>
-
   <%- include('../partials/_footer.ejs') %>  
   </body>
 </html>
