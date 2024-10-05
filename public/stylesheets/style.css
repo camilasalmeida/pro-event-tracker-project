@@ -11,6 +11,8 @@ body {
     background-color: #201c1c;
 }
 
+/*-------------------------------INDEX PAGE ----------------------*/
+
 .index-body {
     background-image: url('https://media.istockphoto.com/id/1210965643/photo/skyscrapers-in-midtown-manhattan-new-york-city.jpg?s=612x612&w=is&k=20&c=QpsRk9MSkGf7IcRFZbFJwjo9cpi_hGppmzTHijTiRrI=');
     background-repeat: no-repeat;
@@ -81,6 +83,8 @@ body {
 .signin-link:hover {
     background-color: #ffffff;
 }
+
+
 /* ----------------Signin/ Signup ------------------------- */
 
 .signin-container,
@@ -130,38 +134,70 @@ input {
 
   /* ----------------INDEX PAGEEEE------------------------- */
 
-.all-events-body {
-    background-color: white;
+.hero-index-events-container {
+    background-image: url('/images/test-logo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-  }
-     
-  .all-events-header {
+    align-items: center;
+    padding: 40px;
+    
+}
+
+.hero-index-events-header {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: flex;
+
+
+}
+
+.hero-index-events-subheader {
+    font-size: 0.7em;
+    display: flex;
+    
+
+}
+.hero-index-event-1 {
+    background-color: #d07676;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
-    width: 90%;
-    background-color: aqua;
-    
-  }
-     
-  .websites-list {
-    background-color: rgb(165, 162, 158);
+    padding: 10px 0px;
+}
 
-  }
+
+.hero-index-event-2 {
+    background-color: #3d3441;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-index-events-header {
+    font-size: 0.9em;
+    font-weight: bold;
+    
+}
+
   .add-event-link {
     padding: 10px;
-    background-color: #ce4866;
-    color: white;
-    border-radius: 30px;
-    border: none;
-    font-size: 1.1em;
-    padding: 2px 25px;
-    text-decoration: none;
+  background-color: #ce4866;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.5em;
+  padding: 2px 25px;
+  text-decoration: none;
   }
      
   .add-event-link:hover {
@@ -170,14 +206,50 @@ input {
 
   /* -----list of Events----- */
 
-ul {
+.hero-index-your-events {
     list-style: none;
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+
   }
+
+  .hero-index-events-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0%;
+
+
+  }
+/* ----------*/
+.websites-list {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+
+}
+
+
+
+.main-some-post-header {
+    font-size: 0.4em;
+    background-image: url('/images/test-logo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Aligns the background image to the bottom */
+    height: 180px; /* Adjust height as needed */
+    width: 100%;
+    margin: 20px; 
+
+}
+
+
      
     /* ----------------NEW AND EDIT FORMS ------------------------- */
 

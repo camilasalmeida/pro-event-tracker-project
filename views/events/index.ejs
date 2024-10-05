@@ -4,50 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>Your Events</title>
-  <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" /> -->
+  <title>Home Page</title>
 </head>
 
 
 
 <body>
-  <%- include('../partials/_navbar.ejs') %>                                        <!-- Adding the nav partial here -->
+  <nav class="nav-index-events">
+    <%- include('../partials/_navbar.ejs') %>                                                  <!-- Adding the nav partial here -->
+  </nav>
 
- 
-  <h1>Welcome to your space, <%= user.username %>! </h1>
-  <p>I hope you're enjoying the App so far.</p>
-  <h2>Your Events:</h1>
-  <a class="add-event-link" href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
-</div>
-  <ul>
-    <% events.forEach((event) => { %>
-        <li>
-            <a href="/users/<%= user._id %>/events/<%= event._id %>">              <!-- Add a link around each application, directing to the 'show' page -->
-            <%= event.conferenceTitle %> promoted by <%= event.company %>
-            </a>
-        </li>
-    <% }) %>
-  </ul>
+  <!-- ----------------------------------------------------------------------------- -->
+  <section class="hero-index-events-container">
+    <section class="hero-index-event-1">
+          <div class="hero-index-events-header">
+              <h1>Welcome to Your Personalized Space, <%= user.username %>! </h1>
+            </div>
+            <div class="hero-index-events-subheader">
+               <p>We hope you're finding the app enjoyable so far!</p>
+            </div>
+    </section>
+<!------------------->
+    <section class="hero-index-event-2">
+      <div class="hero-index-events-header">
+        <h2>Your Events:</h1>
+        </div>
+        <div class="hero-add-event-link">
+          <a class="add-event-link" href="/users/<%=user._id%>/events/new">Add an Event</a>                       <!-- The link for this route should match our defined route above -->
+        </div>
+
+        <div class="hero-index-your-events">
+          <ul>
+             <% events.forEach((event) => { %>
+                <li>
+                  <a href="/users/<%= user._id %>/events/<%= event._id %>">              <!-- Add a link around each application, directing to the 'show' page -->
+                      <%= event.conferenceTitle %> promoted by <%= event.company %>
+                  </a>
+                </li>
+            <% }) %>
+          </ul>
+        </div>
+    </section>
+  </section>
+
+<!-- ------------------------------------------------------------------------- -->
   
+  <main="main-index-events-page"> 
+
+    <section class="websites-list">
+        <div class="website-list-header">
+        <h3>> Top 10 Websites That Will Inspire and Blow Your Mind:</h3>
+      </div>
+
+      <div class="websites-list-links"
+        <ul>
+           <li>
+              <a href="https://techsponyc.com/new-york-tech-events/" target="_blank">TechSponyC</a>
+            </li>
+            <li>
+              <a href="//www.eventyco.com/events/conferences/tech/new-york-city,ny,united-states#google_vignette" target="_blank">Eventyco</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+            <li>
+              <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
+            </li>
+          </ul>
+        </div>
+    </section>
+
+<!-- ------------------------------------------------------------------------- -->
+    <section class="some-post">
+      <div class="main-some-post-header"> 
+        <h3>Building up connections...</h3>
+      </div>
+    </section>
+</main>
 
 
-  <div class="websites-list">
-  <h3>> Top 10 Websites That Will Inspire and Blow Your Mind:</h3>
-  <ul>
-    <li>
-      <a href="https://techsponyc.com/new-york-tech-events/" target="_blank">TechSponyC</a>
-    </li>
-    <li>
-      <a href="//www.eventyco.com/events/conferences/tech/new-york-city,ny,united-states#google_vignette" target="_blank">Eventyco</a>
-    </li>
-    <li>
-      <a href="https://newyork.theaisummit.com/?_mc=sem_aisny_sem_aisny_attnd_tspr_google_pmax_2024&utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_content=attnd_&gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATZCaHHI4Mhy3J_YnmNoCwz1XJ0omyswvkH7gJWQIWwM-3Ovu1GYcMcaAnknEALw_wcB" target="_blank">The AI Summit New York</a>
-    </li>
-  </ul>
-</div>
-
-</div>
+<%- include('../partials/_footer.ejs') %>                                        <!-- Adding the Footer partial here -->
 
 </body>
 </html>
+
 
